@@ -1,0 +1,18 @@
+1、Download YOLOv3 weights from YOLO website.
+2、!wget https://pjreddie.com/media/files/yolov3.weights (Use this in colab Pro)  
+3、Convert the Darknet YOLO model to a Keras model: python convert.py yolov3.cfg yolov3.weights model_data/yolo.h5
+4、Run YOLO detection.  
+5、modify yolo.py as         
+    "model_path": 'model_data/yolo.h5',  
+    "anchors_path": 'model_data/yolo_anchors.txt',  
+    "classes_path": 'model_data/coco_classes.txt',  
+6、python yolo_video.py [OPTIONS...] --image, for image detection mode
+7、python yolo_video.py [video_path] [output_path (optional)], for video detection
+8、download red-blood-cell dataset: https://github.com/cosmicad/dataset
+9、Convert the Darknet YOLO model to a Keras model: 
+    python convert.py -w darknet53.cfg darknet53.weights model_data/darknet53_weights.h5
+10、transfer annotation files into a txt file
+11、if you wana use the pretrained weights , download here : https://pjreddie.com/media/files/darknet53.conv.74
+   use the pretrained weights and you will get a better performance in a little dataset.  
+12、change to your own path, modify wyk_train_redcell.py-
+ 13、run pyhton wyk_train_redcell.py and later you will see the weights in loggig dir
